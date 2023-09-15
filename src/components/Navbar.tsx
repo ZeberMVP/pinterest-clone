@@ -45,14 +45,15 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
         >
           <Icons.pinterest />
         </Link>
+        {/* Desktop */}
         <Link
           className={cn(
             buttonVariants({
               size: "lg",
-              variant: activeTab === "home" ? "default" : "ghost",
+              variant: activeTab === "Home" ? "default" : "ghost",
             }),
-            "w-20 rounded-[40px] text-base font-semibold",
-            activeTab === "home" ? "" : "hover:bg-white hover:text-foreground",
+            "hidden w-20 rounded-[40px] text-base font-semibold md:flex",
+            activeTab === "Home" ? "" : "hover:bg-white hover:text-foreground",
           )}
           href="/"
         >
@@ -62,25 +63,23 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
           className={cn(
             buttonVariants({
               size: "lg",
-              variant: activeTab === "explore" ? "default" : "ghost",
+              variant: activeTab === "Today" ? "default" : "ghost",
             }),
-            "w-20 rounded-[40px] text-base font-semibold",
-            activeTab === "explore"
-              ? ""
-              : "hover:bg-white hover:text-foreground",
+            "hidden w-20 rounded-[40px] text-base font-semibold md:flex",
+            activeTab === "Today" ? "" : "hover:bg-white hover:text-foreground",
           )}
-          href="/"
+          href="/today"
         >
           Explore
         </Link>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
-              variant={activeTab === "idea-pin-builder" ? "default" : "ghost"}
+              variant={activeTab === "Create" ? "default" : "ghost"}
               size="lg"
               className={cn(
-                "w-20 rounded-[40px] text-base font-semibold",
-                activeTab === "idea-pin-builder"
+                "hidden w-20 rounded-[40px] text-base font-semibold md:flex",
+                activeTab === "Create"
                   ? ""
                   : "hover:bg-white hover:text-foreground",
               )}
@@ -97,6 +96,38 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             </DropdownMenuItem>
             <DropdownMenuItem>
               <Link href="/pin-builder">Create Pin</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+        {/* Mobile */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="w-20 rounded-[40px] text-base font-semibold md:hidden"
+            >
+              {activeTab}{" "}
+              <div>
+                <ChevronDown />
+              </div>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="ml-4 w-32" align="end">
+            <DropdownMenuItem
+              className={activeTab === "Home" ? "bg-popover" : ""}
+            >
+              <Link href="/">Home</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              className={activeTab === "Today" ? "bg-popover" : ""}
+            >
+              <Link href="/today">Today</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              className={activeTab === "Create" ? "bg-popover" : ""}
+            >
+              <Link href="/idea-pin-builder">Create</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
