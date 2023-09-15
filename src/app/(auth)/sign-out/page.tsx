@@ -3,7 +3,7 @@
 import { signOut } from "next-auth/react";
 import { useEffect } from "react";
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     signOut({
       callbackUrl: `${window.location.origin}/sign-in`,
@@ -12,4 +12,4 @@ const page = () => {
   return;
 };
 
-export default page;
+export default Page;
