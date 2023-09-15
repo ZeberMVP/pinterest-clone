@@ -138,7 +138,7 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-[40px] hover:bg-black/10"
+              className="hidden rounded-[40px] hover:bg-black/10 sm:flex"
             >
               <Bell className="fill-secondary text-secondary" />
             </Button>
@@ -155,7 +155,7 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-[40px] hover:bg-black/10"
+              className="hidden rounded-[40px] hover:bg-black/10 sm:flex"
             >
               <MessageCircle className="fill-secondary text-secondary" />
             </Button>
