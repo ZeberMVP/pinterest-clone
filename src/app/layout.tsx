@@ -1,10 +1,11 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 
+import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/Toaster";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { TailwindIndicator } from "@/components/TailwindIndicator";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="light">
           {children}
           <TailwindIndicator />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

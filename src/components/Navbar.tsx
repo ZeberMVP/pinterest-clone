@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 
 import { Icons } from "@/components/Icons";
@@ -7,26 +5,26 @@ import SearchBar from "@/components/SearchBar";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Command, CommandInput } from "@/components/ui/Command";
 import {
+  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/DropdownMenu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/Sheet";
 import { cn } from "@/lib/utils";
-import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import {
   Bell,
   ChevronDown,
-  LogOut,
   MessageCircle,
   MoreHorizontal,
   Pencil,
   UserPlus,
 } from "lucide-react";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
+import NavAccountAvatar from "@/components/NavAccountAvatar";
+import NavAccountDropdown from "@/components/NavAccountDropdown";
+import { Sign } from "crypto";
+import SignInButton from "./SignInButton";
 
 interface NavBarProps {
   activeTab: string;
@@ -203,38 +201,11 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             </div>
           </SheetContent>
         </Sheet>
-        <Avatar className="h-7 w-7">
-          <AvatarImage src="https://github.com/zebermvp.png" alt="zebermvp" />
-          <AvatarFallback>RZ</AvatarFallback>
-        </Avatar>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-[40px] text-base font-semibold hover:bg-background hover:text-secondary"
-            >
-              <ChevronDown />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="end" forceMount>
-            <DropdownMenuLabel>
-              <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">Rubén Zafra</p>
-                <p className="pt-0.5 text-xs font-normal leading-none text-muted-foreground">
-                  ruben@email.com
-                </p>
-              </div>
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
-              <Link href="/sign-out">
-                <LogOut className="mr-2 h-4 w-4" aria-hidden="true" />
-                Log out
-              </Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        {/* User is signed in */}
+        <NavAccountAvatar />
+        <NavAccountDropdown />
+        {/* User is not signed in */}
+        <SignInButton />
       </section>
     </nav>
   );
