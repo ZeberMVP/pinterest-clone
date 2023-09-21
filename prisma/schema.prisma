@@ -31,6 +31,16 @@ model Account {
   @@index([userId])
 }
 
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -41,4 +51,51 @@ model User {
 
   image    String?
   accounts Account[]
+  sessions Session[]
+  pins     Pin[]
+  comments Comment[]
+  likes    Like[]
+}
+
+model Pin {
+  id          String    @id @default(cuid())
+  title       String
+  image       String
+  description String?
+  userId      String
+  comments    Comment[]
+  likes       Like[]
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Comment {
+  id     String @id @default(cuid())
+  text   String
+  pinId  String
+  userId String
+  likes  Like[]
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pin  Pin  @relation(fields: [pinId], references: [id], onDelete: Cascade)
+
+  @@index([pinId])
+  @@index([userId])
+}
+
+model Like {
+  id        String  @id @default(cuid())
+  userId    String
+  pinId     String
+  commentId String?
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pin     Pin      @relation(fields: [pinId], references: [id], onDelete: Cascade)
+  comment Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, pinId, commentId])
+  @@index([pinId])
+  @@index([commentId])
 }

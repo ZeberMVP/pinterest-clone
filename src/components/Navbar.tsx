@@ -1,6 +1,8 @@
 import { FC } from "react";
 
 import { Icons } from "@/components/Icons";
+import NavAccountAvatar from "@/components/NavAccountAvatar";
+import NavAccountDropdown from "@/components/NavAccountDropdown";
 import SearchBar from "@/components/SearchBar";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Command, CommandInput } from "@/components/ui/Command";
@@ -21,9 +23,6 @@ import {
   UserPlus,
 } from "lucide-react";
 import Link from "next/link";
-import NavAccountAvatar from "@/components/NavAccountAvatar";
-import NavAccountDropdown from "@/components/NavAccountDropdown";
-import { Sign } from "crypto";
 import SignInButton from "./SignInButton";
 
 interface NavBarProps {
@@ -76,7 +75,7 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
               variant={activeTab === "Create" ? "default" : "ghost"}
               size="lg"
               className={cn(
-                "hidden w-20 rounded-[40px] text-base font-semibold md:flex",
+                "hidden w-24 rounded-[40px] text-base font-semibold md:flex",
                 activeTab === "Create"
                   ? ""
                   : "hover:bg-white hover:text-foreground",
@@ -90,10 +89,14 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
             <DropdownMenuItem>
-              <Link href="/idea-pin-builder">Create Idea Pin</Link>
+              <Link href="/idea-pin-builder" className="w-56">
+                Create Idea Pin
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/pin-builder">Create Pin</Link>
+              <Link href="/idea-pin-builder" className="w-56">
+                Create Pin
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -185,7 +188,7 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             </Command>
 
             <div className="mt-8 flex cursor-pointer gap-4">
-              <div className="h-12 w-12 rounded-full bg-[#e60023]">
+              <div className="h-12 w-12 rounded-full bg-[#E60023]">
                 <Pencil className="mx-auto mt-3 text-white" />
               </div>
               <p className="pt-3 font-semibold">New message</p>
