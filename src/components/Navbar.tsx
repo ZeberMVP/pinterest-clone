@@ -65,7 +65,7 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             "hidden w-20 rounded-[40px] text-base font-semibold md:flex",
             activeTab === "Today" ? "" : "hover:bg-white hover:text-foreground",
           )}
-          href="/today"
+          href="/"
         >
           Explore
         </Link>
@@ -123,7 +123,7 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             <DropdownMenuItem
               className={activeTab === "Today" ? "bg-popover" : ""}
             >
-              <Link href="/today">Today</Link>
+              <Link href="/">Today</Link>
             </DropdownMenuItem>
             <DropdownMenuItem
               className={activeTab === "Create" ? "bg-popover" : ""}
