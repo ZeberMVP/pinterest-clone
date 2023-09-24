@@ -54,7 +54,6 @@ model User {
   sessions Session[]
   pins     Pin[]
   comments Comment[]
-  likes    Like[]
 }
 
 model Pin {
@@ -67,7 +66,6 @@ model Pin {
   updatedAt   DateTime @default(now()) @updatedAt
 
   comments Comment[]
-  likes    Like[]
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -79,26 +77,10 @@ model Comment {
   text   String
   pinId  String
   userId String
-  likes  Like[]
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   pin  Pin  @relation(fields: [pinId], references: [id], onDelete: Cascade)
 
   @@index([pinId])
   @@index([userId])
-}
-
-model Like {
-  id        String  @id @default(cuid())
-  userId    String
-  pinId     String
-  commentId String?
-
-  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  pin     Pin      @relation(fields: [pinId], references: [id], onDelete: Cascade)
-  comment Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, pinId, commentId])
-  @@index([pinId])
-  @@index([commentId])
 }
