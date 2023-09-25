@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pinterest Clone
+Welcome to the Pinterest Clone project! You can access the live version of this project [here](https://pinterest-clone-amber.vercel.app/). Please note that this is a minimal viable product (MVP) designed to mimic the user interface and functionality of the popular social network, Pinterest.
 
-## Getting Started
+**WARNING: This project is intended solely for demonstration purposes and is not intended to infringe upon Pinterest's rights or replace it.**
 
-First, run the development server:
+## Features
+- **Home Page**: Browse and explore all the pins published on the website.
+- **Authentication**: Secure your account using [NextAuth.js](https://next-auth.js.org/), which offers OAuth sign-up with Google for a seamless and safe login experience.
+- **Create Ideas**: Once you've registered, you can unleash your creativity by creating new ideas. Your creations will be featured on the home page for others to discover.
+- **Post Comments**: Share your thoughts and insights by leaving comments on ideas. Your comments will be visible to everyone, promoting interaction and engagement.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Technologies I used
+<p align="left">
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="36" height="36" alt="TypeScript" /></a>
+<a href="https://nextjs.org/docs" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg" width="36" height="36" alt="NextJs" /></a>
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
+<a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" width="36" height="36" alt="TailwindCSS" /></a>
+<a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL" /></a>
+<a href="https://www.prisma.io/" target="_blank" rel="noreferrer"><img src="readme_files/prisma.png" width="36" height="36" alt="Prisma" /></a>
+<a href="https://next-auth.js.org/" target="_blank" rel="noreferrer"><img src="readme_files/next-auth.png" width="36" height="36" alt="NextAuth.js" /></a>
+<a href="https://ui.shadcn.com/" target="_blank" rel="noreferrer"><img src="readme_files/shadcn-ui.png" width="36" height="36" alt="shadcn/ui" /></a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/ZeberMVP/pinterest-clone/assets/106594858/90dce56d-e9d8-4b03-9e75-d62c3fecfc6f)
