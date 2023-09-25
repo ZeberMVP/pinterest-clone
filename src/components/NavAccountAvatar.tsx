@@ -7,7 +7,10 @@ const NavAccountAvatar = async () => {
 
   return (
     <Avatar className={session ? "h-7 w-7" : "hidden"}>
-      <AvatarImage src={session?.user?.image!} alt="zebermvp" />
+      <AvatarImage
+        src={session?.user?.image!}
+        alt={session?.user.name || "user"}
+      />
       <AvatarFallback>
         <span className="sr-only">{session?.user?.name}</span>
         <User className="h-4 w-4" />

@@ -11,7 +11,7 @@ const GoBackButton = () => {
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => router.back()}
+      onClick={() => router.push("/")}
       className="ml-8 mt-8"
     >
       <ArrowLeft />

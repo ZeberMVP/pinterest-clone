@@ -65,7 +65,8 @@ const Navbar: FC<NavBarProps> = ({ activeTab }) => {
             "hidden w-20 rounded-[40px] text-base font-semibold md:flex",
             activeTab === "Today" ? "" : "hover:bg-white hover:text-foreground",
           )}
-          href="/"
+          href="https://github.com/ZeberMVP/pinterest-clone"
+          target="_blank"
         >
           Explore
         </Link>

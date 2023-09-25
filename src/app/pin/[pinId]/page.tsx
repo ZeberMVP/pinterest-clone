@@ -1,6 +1,7 @@
 import Comments from "@/components/Comments";
 import GoBackButton from "@/components/GoBackButton";
 import Navbar from "@/components/Navbar";
+import PostComment from "@/components/PostComment";
 import UserTag from "@/components/UserTag";
 import { db } from "@/lib/db";
 import Image from "next/image";
@@ -49,6 +50,7 @@ const page = async ({ params }: PageProps) => {
             <h2 className="mt-4 text-[30px] font-bold">{pin.title}</h2>
             <h2 className="mt-6">{pin.description}</h2>
             <Comments pinId={pin.id} />
+            <PostComment pinId={pin.id} />
           </div>
         </div>
       </div>
